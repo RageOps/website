@@ -1,0 +1,21 @@
+/*
+ *Name: Devan Schneider
+ *UnityID: dmschnei
+ *Date: 11/12/21
+ *Assignment: Webpages IA
+ *Description: Webpages IA style.css sheet
+ */
+ 
+p {
+    font-size: 18px;
+}
+
+table {
+    border: 1px solid #CC0000;
+}
+
+#image {
+    border: 2px outset #00FF00;
+    width: 200px;
+    height: 250px;
+}
