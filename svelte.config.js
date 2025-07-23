@@ -14,6 +14,16 @@ const config = {
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/website' : ''
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// ignore missing links
+				if (message.includes('Not found')) {
+					return;
+				}
+				// otherwise, fail the build
+				throw new Error(message);
+			}
 		}
 	}
 };
