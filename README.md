@@ -1,117 +1,75 @@
-# Devan Schneider - Portfolio Website
+# React + TypeScript + Vite
 
-A modern, responsive portfolio website built with SvelteKit and Tailwind CSS.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- 🚀 Built with SvelteKit for optimal performance
-- 🎨 Styled with Tailwind CSS for modern design
-- 📱 Fully responsive design
-- 📄 Static site generation for fast loading
-- 🔗 Easy deployment to GitHub Pages
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Pages
+## React Compiler
 
-- **Home** - Landing page with introduction
-- **About** - Personal information and social links
-- **Projects** - Portfolio of work and projects
-- **Contact** - Contact form and information
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-## Development
- - Create Pull requests
+Note: This will impact Vite dev & build performances.
 
-### Prerequisites
+## Expanding the ESLint configuration
 
-- Node.js 18+ 
-- npm or yarn
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### Setup
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd website
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-2. Install dependencies:
-```bash
-npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-3. Start development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build
-
-To build for production:
-```bash
-npm run build
-```
-
-## Deployment
-
-### GitHub Pages
-
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
-
-1. **Update Repository Name**: In `svelte.config.js`, replace `YOUR_REPO_NAME` with your actual GitHub repository name.
-
-2. **Enable GitHub Pages**:
-   - Go to your repository settings
-   - Navigate to "Pages" section
-   - Set source to "GitHub Actions"
-
-3. **Deploy**: Push to the `main` branch and the site will automatically deploy.
-
-### Manual Deployment
-
-For manual deployment:
-```bash
-npm run deploy
-```
-
-## Project Structure
-
-```
-src/
-├── routes/
-│   ├── +layout.svelte    # Main layout with navigation
-│   ├── +page.svelte      # Home page
-│   ├── about/
-│   │   └── +page.svelte  # About page
-│   ├── projects/
-│   │   ├── +page.svelte  # Projects listing
-│   │   └── [project]/    # Individual project pages
-│   └── contact/
-│       └── +page.svelte  # Contact page
-static/                   # Static assets (images, etc.)
-```
-
-## Customization
-
-### Adding Images
-
-Place images in the `static/` directory:
-- Profile photo: `static/profile.jpg`
-- Project images: `static/project1.jpg`, `static/project2.jpg`, etc.
-
-### Updating Content
-
-- Edit page content in the respective `+page.svelte` files
-- Update project information in `src/routes/projects/+page.svelte`
-- Modify navigation in `src/routes/+layout.svelte`
-
-## Technologies Used
-
-- [SvelteKit](https://kit.svelte.dev/) - Full-stack web framework
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Vite](https://vitejs.dev/) - Build tool and dev server
-
-## License
-
-MIT License - feel free to use this template for your own portfolio!
