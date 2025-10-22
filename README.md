@@ -18,6 +18,7 @@ A modern, responsive portfolio website built with SvelteKit and Tailwind CSS.
 - **Contact** - Contact form and information
 
 ## Development
+ - Create Pull requests
 
 ### Prerequisites
 
