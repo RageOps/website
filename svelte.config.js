@@ -13,7 +13,7 @@ const config = {
 			fallback: null
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/website' : ''
+			base: process.env.NODE_ENV === 'production' ? '/portfolio' : ''
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
