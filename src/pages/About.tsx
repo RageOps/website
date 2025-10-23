@@ -47,7 +47,7 @@ const About: React.FC = () => {
                 About Me
               </Typography>
               <Typography variant="body1" paragraph>
-                I'm a dedicated software engineer with a passion for solving complex problems through technology. 
+                I'm a software engineer with a passion for solving complex problems through technology. 
                 I enjoy learning about how the internet works and how each connected system works together to create
                 complex applications that run the world as we know it. I am currently pursuing my GCP Associate Cloud Engineer certification.
               </Typography>
