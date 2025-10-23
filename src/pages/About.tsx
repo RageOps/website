@@ -1,0 +1,116 @@
+import React from 'react';
+import { Box, Typography, Card, CardContent, Chip, Grid } from '@mui/material';
+import { Code, School, Work, LocationOn } from '@mui/icons-material';
+
+const About: React.FC = () => {
+  const skills = [
+    'Java', 'JavaScript', 'TypeScript', 'Python', 'C++', 'C', 'SQL', 'Lua', 'CSS', 'Google Cloud', 'Docker'
+  ];
+
+  return (
+    <Box>
+      {/* Hero Section */}
+      <Box sx={{ textAlign: 'center', mb: 6 }}>
+        <Box
+          component="img"
+          src="/pfp.jpg"
+          alt="Devan Schneider"
+          sx={{
+            width: 150,
+            height: 150,
+            mx: 'auto',
+            mb: 3,
+            borderRadius: '50%',
+            objectFit: 'cover',
+            border: '3px solid',
+            borderColor: 'primary.main',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          }}
+        />
+        <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+          Devan Schneider
+        </Typography>
+        <Typography variant="h5" color="text.secondary" gutterBottom>
+          Java Developer & Software Engineer
+        </Typography>
+        <Typography variant="body1" sx={{ maxWidth: 600, mx: 'auto', mt: 2 }}>
+          Passionate about creating innovative solutions and building efficient and meaningful software that makes a difference. Java Developer for Huntington National Bank.
+        </Typography>
+      </Box>
+
+      <Grid container spacing={4}>
+        {/* About Me Card */}
+        <Grid size={{ xs: 12}}>
+          <Card elevation={2}>
+            <CardContent sx={{ p: 4 }}>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
+                About Me
+              </Typography>
+              <Typography variant="body1" paragraph>
+                I'm a dedicated software engineer with a passion for solving complex problems through technology. 
+                I enjoy learning about how the internet works and how each connected system works together to create
+                complex applications that run the world as we know it. I am currently pursuing my GCP Associate Cloud Engineer certification.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                I believe in writing clean, maintainable code and staying up-to-date with the latest technologies. 
+                When I'm not coding, you can find me exploring new tech stacks, creating YouTube videos, dancing, doing photography, 
+                or spending time honing my skills in the kitchen.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Skills & Info Card */}
+        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 3 }}>
+          <Card elevation={2}>
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                Quick Info
+              </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <LocationOn color="primary" />
+                  <Typography variant="body2">Based in Columbus, OH</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <School color="primary" />
+                  <Typography variant="body2">Computer Science, BS | North Carolina State University</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Work color="primary" />
+                  <Typography variant="body2">Java Developer | Huntington National Bank</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Code color="primary" />
+                  <Typography variant="body2">Full-Stack Developer</Typography>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+
+          <Card elevation={2} sx={{ mb: 3 }}>
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                Skills
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                {skills.map((skill) => (
+                  <Chip
+                    key={skill}
+                    label={skill}
+                    size="small"
+                    color="primary"
+                    variant="outlined"
+                  />
+                ))}
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+
+      </Grid>
+    </Box>
+  );
+};
+
+export default About;
