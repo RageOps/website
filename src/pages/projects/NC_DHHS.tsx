@@ -26,10 +26,8 @@ const NC_DHHS_Project: React.FC = () => {
     ],
     results: [
       'Successfully delivered a fully functional inventory management system',
-      'Reduced manual inventory tracking time by 60%',
       'Improved supply chain visibility across all DHHS facilities',
-      'Received positive feedback from DHHS stakeholders and end users',
-      'System is currently being evaluated for broader implementation'
+      'Received positive feedback from DHHS stakeholders and end users'
     ]
   };
 

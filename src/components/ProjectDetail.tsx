@@ -91,7 +91,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
       <Grid container spacing={4}>
         {/* Main Content */}
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8}}>
           <Card elevation={2}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
@@ -154,7 +154,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
         </Grid>
 
         {/* Sidebar */}
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card elevation={2}>
             <CardContent sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
@@ -196,9 +196,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     Duration
                   </Typography>
                   <Typography variant="body1">
-                    {project.id === 1 ? '8 months' : 
-                     project.id === 2 ? '6 months' : 
-                     '4 months'}
+                    {project.id === 1 ? '6 months' : 
+                     project.id === 2 ? '9 months' : 
+                     '10 days'}
                   </Typography>
                 </Box>
 
@@ -207,9 +207,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     Team Size
                   </Typography>
                   <Typography variant="body1">
-                    {project.id === 1 ? '4 members' : 
-                     project.id === 2 ? 'Solo project' : 
-                     '2 members'}
+                    {project.id === 1 ? '5 members' : 'Solo project'}
                   </Typography>
                 </Box>
               </Box>
