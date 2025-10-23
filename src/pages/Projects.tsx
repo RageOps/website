@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, CardActions, Button, Grid, Chip, CardMedia } from '@mui/material';
-import { GitHub, Launch, Visibility } from '@mui/icons-material';
+import { Box, Typography, Card, CardContent, CardActions, Button, Chip, CardMedia } from '@mui/material';
+import { GitHub } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 interface Project {
