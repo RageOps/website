@@ -4,7 +4,7 @@ import { Code, School, Work, LocationOn } from '@mui/icons-material';
 
 const About: React.FC = () => {
   const skills = [
-    'Java', 'JavaScript', 'TypeScript', 'Python', 'C++', 'C', 'SQL', 'Lua', 'CSS'
+    'Java', 'JavaScript', 'TypeScript', 'Python', 'C++', 'C', 'SQL', 'Lua', 'CSS', 'Google Cloud', 'Docker'
   ];
 
   return (
@@ -53,12 +53,8 @@ const About: React.FC = () => {
               </Typography>
               <Typography variant="body1" paragraph>
                 I believe in writing clean, maintainable code and staying up-to-date with the latest technologies. 
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                or sharing knowledge with the developer community.
-              </Typography>
-              <Typography variant="body1">
-                I'm always excited to take on new challenges and collaborate with like-minded individuals to create 
-                innovative solutions that have a positive impact.
+                When I'm not coding, you can find me exploring new technologies, creating YouTube videos, dancing, doing photography, 
+                or spending time honing my skills in the kitchen.
               </Typography>
             </CardContent>
           </Card>
@@ -93,15 +89,15 @@ const About: React.FC = () => {
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <LocationOn color="primary" />
-                  <Typography variant="body2">Based in [Your Location]</Typography>
+                  <Typography variant="body2">Based in Columbus, OH</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <School color="primary" />
-                  <Typography variant="body2">[Your Education]</Typography>
+                  <Typography variant="body2">Computer Science, BS | North Carolina State University</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Work color="primary" />
-                  <Typography variant="body2">[Your Experience]</Typography>
+                  <Typography variant="body2">Java Developer | Huntington National Bank</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Code color="primary" />

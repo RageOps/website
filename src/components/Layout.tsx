@@ -85,7 +85,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         }}
       >
         <Typography variant="body2" color="text.secondary">
-          © 2025 Devan Schneider. All rights reserved.
+          © {new Date().getFullYear()} Devan Schneider. All rights reserved.
         </Typography>
       </Box>
     </Box>
