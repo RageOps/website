@@ -34,13 +34,13 @@ const About: React.FC = () => {
           Java Developer & Software Engineer
         </Typography>
         <Typography variant="body1" sx={{ maxWidth: 600, mx: 'auto', mt: 2 }}>
-          Passionate about creating innovative solutions and building meaningful software that makes a difference. Java Developer for Huntington National Bank.
+          Passionate about creating innovative solutions and building efficient and meaningful software that makes a difference. Java Developer for Huntington National Bank.
         </Typography>
       </Box>
 
       <Grid container spacing={4}>
         {/* About Me Card */}
-        <Grid xs={12} md={8}>
+        <Grid size={{ xs: 12}}>
           <Card elevation={2}>
             <CardContent sx={{ p: 4 }}>
               <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', mb: 3 }}>
@@ -48,12 +48,12 @@ const About: React.FC = () => {
               </Typography>
               <Typography variant="body1" paragraph>
                 I'm a dedicated software engineer with a passion for solving complex problems through technology. 
-                My journey in software development has led me to work on diverse projects ranging from web applications 
-                to embedded systems.
+                I enjoy learning about how the internet works and how each connected system works together to create
+                complex applications that run the world as we know it. I am currently pursuing my GCP Associate Cloud Engineer certification.
               </Typography>
               <Typography variant="body1" paragraph>
                 I believe in writing clean, maintainable code and staying up-to-date with the latest technologies. 
-                When I'm not coding, you can find me exploring new technologies, creating YouTube videos, dancing, doing photography, 
+                When I'm not coding, you can find me exploring new tech stacks, creating YouTube videos, dancing, doing photography, 
                 or spending time honing my skills in the kitchen.
               </Typography>
             </CardContent>
@@ -61,26 +61,7 @@ const About: React.FC = () => {
         </Grid>
 
         {/* Skills & Info Card */}
-        <Grid xs={12} md={4}>
-          <Card elevation={2} sx={{ mb: 3 }}>
-            <CardContent sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
-                Skills
-              </Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                {skills.map((skill) => (
-                  <Chip
-                    key={skill}
-                    label={skill}
-                    size="small"
-                    color="primary"
-                    variant="outlined"
-                  />
-                ))}
-              </Box>
-            </CardContent>
-          </Card>
-
+        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 3 }}>
           <Card elevation={2}>
             <CardContent sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
@@ -106,7 +87,27 @@ const About: React.FC = () => {
               </Box>
             </CardContent>
           </Card>
-        </Grid>
+
+          <Card elevation={2} sx={{ mb: 3 }}>
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                Skills
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                {skills.map((skill) => (
+                  <Chip
+                    key={skill}
+                    label={skill}
+                    size="small"
+                    color="primary"
+                    variant="outlined"
+                  />
+                ))}
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+
       </Grid>
     </Box>
   );

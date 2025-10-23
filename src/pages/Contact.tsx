@@ -5,7 +5,7 @@ import {
   GitHub, 
   YouTube, 
   Email,
-  Instagram 
+  Instagram
 } from '@mui/icons-material';
 
 const Contact: React.FC = () => {
