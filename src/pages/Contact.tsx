@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, CardActions, Button, Grid, IconButton } from '@mui/material';
+import { Box, Typography, Card, CardContent, CardActions, Button, IconButton } from '@mui/material';
 import { 
   LinkedIn, 
   GitHub, 
